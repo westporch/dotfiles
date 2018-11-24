@@ -201,3 +201,7 @@ workspace 1 output HDMI-1
 #workspace 8 output HDMI-1
 #workspace 9 output HDMI-1
 #workspace 10 output HDMI-1
+
+
+# Filter blue light
+exec --no-startup-id redshift-gtk
