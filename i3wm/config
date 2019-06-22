@@ -176,19 +176,18 @@ bar {
 # Set wallpaper
 exec --no-startup-id nitrogen --restore
 
-
 # Set monitor(only output HDMI-1)
 exec --no-startup-id xrandr --output LVDS-1 --off --output DP-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VGA-1 --off
 exec --no-startup-id xset dpms force off # https://www.reddit.com/r/archlinux/comments/8q6x1u/help_please_how_to_turn_off_my_laptops_monitor/e0h83m1 
 
-
 # Set sound output(only output hdmi monitor)
 exec --no-startup-id pacmd set-card-profile 0 output:hdmi-stereo 
-
 
 # Start parcellite (If you drag some texts, parcellite copy them.) 
 exec --no-startup-id parcellite 
 
+# Left handed mouse
+exec --no-startup-id xmodmap -e "pointer = 3 2 1"
 
 # Assign workspaces
 workspace 1 output HDMI-1
@@ -201,7 +200,6 @@ workspace 1 output HDMI-1
 #workspace 8 output HDMI-1
 #workspace 9 output HDMI-1
 #workspace 10 output HDMI-1
-
 
 # Filter blue light
 exec --no-startup-id redshift-gtk
