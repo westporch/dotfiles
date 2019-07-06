@@ -203,3 +203,6 @@ workspace 1 output HDMI-1
 
 # Filter blue light
 exec --no-startup-id redshift-gtk
+
+# Run dunst(A customizable and lightweight notification-daemon)
+exec --no-startup-id dunst &
