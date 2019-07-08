@@ -181,7 +181,8 @@ exec --no-startup-id xrandr --output LVDS-1 --off --output DP-1 --off --output H
 exec --no-startup-id xset dpms force off # https://www.reddit.com/r/archlinux/comments/8q6x1u/help_please_how_to_turn_off_my_laptops_monitor/e0h83m1 
 
 # Set sound output(only output hdmi monitor)
-exec --no-startup-id pacmd set-card-profile 0 output:hdmi-stereo 
+#exec --no-startup-id pacmd set-card-profile 0 output:hdmi-stereo 
+exec --no-startup-id pactl set-card-profile 0 output:hdmi-stereo    # https://askubuntu.com/a/541043
 
 # Start parcellite (If you drag some texts, parcellite copy them.) 
 exec --no-startup-id parcellite 
