@@ -80,6 +80,10 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+    Key([mod], "c", lazy.spawn("chromium")),
+    Key([mod], "f", lazy.spawn("firefox")),
+    Key([mod], "v", lazy.spawn("pavucontrol")),
+    Key([mod], "g", lazy.spawn("gedit")),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -103,7 +107,7 @@ layouts = [
     layout.Columns(border_focus='#4C7899', border_width=4),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
-    layout.Stack(border_focus='$4C7899', border_width=4, num_stacks=2),
+    #layout.Stack(border_focus='$4C7899', border_width=4, num_stacks=2),
     layout.Bsp(border_focus='#4C7899', border_width=4),
     layout.Matrix(border_focus='#4C7899', border_width=4),
     layout.MonadTall(border_focus='#4C7899', border_width=4),
@@ -140,7 +144,7 @@ screens = [
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.TextBox("Battery: "),
                 widget.Battery(format='{percent:2.0%}'),
-                widget.TextBox("Audio: "),
+                widget.TextBox("Volume: "),
                 widget.PulseVolume(),
                 widget.Systray(),
                 #widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
