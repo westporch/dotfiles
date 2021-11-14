@@ -26,10 +26,12 @@
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+
+import os
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -197,3 +199,13 @@ auto_minimize = True
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+
+def set_wallpaper():
+    path = '~/바탕화면/debian_solarized_light.png'
+    os.system('feh --bg-fill ' + path)
+
+
+@hook.subscribe.startup_once
+def autostart():
+    set_wallpaper()
