@@ -203,7 +203,7 @@ wmname = "LG3D"
 
 def set_wallpaper():
     path = '~/바탕화면/debian_solarized_light.png'
-    os.system('feh --bg-fill ' + path)
+    os.system('feh --bg-scale ' + path)
 
 
 @hook.subscribe.startup_once
