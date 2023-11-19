@@ -185,13 +185,13 @@ bar {
 
 
 # Set a monitor(only output HDMI-1)
-exec --no-startup-id xrandr --output LVDS-1 --off --output VGA-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off
+# exec --no-startup-id xrandr --output LVDS-1 --off --output VGA-1 --off --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off
 
 # Set a wallpaper
 exec --no-startup-id nitrogen --restore
 
 # Set a monitor(night mode)
-exec --no-startup-id sct 5000
+exec --no-startup-id xsct 5000
 
 # Set left handed mouse
 exec --no-startup-id xmodmap -e "pointer = 3 2 1"
